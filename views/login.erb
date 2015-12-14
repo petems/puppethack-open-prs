@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="twelve column center">
+    <h1 class="logo">PuppetLabs Open Pull-Requests (#puppethack)</h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="twelve column center">
+    <p>
+      This is a basic Sinatra app that fetches the current open pull-requests for PuppetLabs. We require GitHub OAuth to avoid hitting rate-limits.
+    </p>
+    <p>
+    You will see in the OAuth page we only request access to public_repos, so none of your private data will be used.
+    </p>
+    <p>
+    PR's listed use the following query:
+    <h4>user:puppetlabs is:pr is:open created:>2014-01-01</h4>
+    </p>
+    <a class="button" href="/auth">
+      Login from GitHub
+      <img class="button-github" src="/images/GitHub-Mark-32px.png">
+    </a>
+  </div>
+</div>
+
+<div class="row">
+  <div class="twelve colunm center">
+    <footer>
+      <a href="/about">about this app</a>
+    </footer>
+  </div>
+</div>

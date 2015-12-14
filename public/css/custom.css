@@ -1,0 +1,64 @@
+img.button-github {
+  height: 60%;
+  margin: -5px 3px;
+}
+
+div.icon-container{
+  width: 100px;
+}
+
+span.icon {
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  margin: 3px;
+  /*font: 0/0 a;*/
+  text-shadow: none;
+  color: transparent;
+}
+
+span.icon.ready {
+  background-color: #6cc644;
+}
+
+span.icon.pending {
+  background-color: #bd2c00;
+}
+
+h1.logo {
+  line-height: inherit;
+}
+
+div.center {
+  text-align: center;
+  margin: 0 auto;
+}
+
+div.justify p {
+  text-align: justify;
+}
+
+strong.pending {
+  color: #bd2c00;
+}
+
+strong.ready {
+  color: #6cc644;
+}
+
+.filter-table .quick {
+ margin-left: 0.5em;
+ font-size: 0.8em;
+ text-decoration: none;
+ margin-bottom:0;
+}
+
+.fitler-table .quick:hover {
+ text-decoration: underline;
+}
+
+td.alt {
+ background-color: #ffc; background-color: rgba(255, 255, 0, 0.2);
+}

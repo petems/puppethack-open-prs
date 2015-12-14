@@ -1,0 +1,90 @@
+<div class="row">
+  <div class="one-third column">
+    <p>
+      <%= "Logged as #{session[:user]} | " %><a href="/logout">Logout</a>
+    </p>
+  </div>
+</div>
+
+<h1>Puppet Community Open Pull-Requests</h1>
+
+<div class="row">
+  <div class="twelve columns">
+    <% unless @pulls.empty? %>
+    <% @pulls.each do |org, pulls| %>
+      <h4> There are <%= pulls.length %> currently open pull-requests.</h3>
+      <h5>Click on a heading to sort ascending or descending</h5>
+      <h6>Search or click the #puppethack button to show all tagged with #puppethack</h6>
+      <table id="pr-table" class="u-full-width tablesorter">
+        <thead>
+          <tr>
+            <th><span>Name</span></th>
+            <th><span>Repo</span></th>
+            <th><span>Author</span></th>
+            <th><span>Last Update</span></th>
+            <th><span>Comment Count</span></th>
+            <th><span>Labels</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% pulls.each_with_index do |pull, i| %>
+          <% delay = i * 0.5 %>
+            <tr>
+              <td>
+                <a href="<%= pull[:html_url] %>">
+                  <%= pull[:title] %>
+                </a>
+              </td>
+              <td>
+                <a href="<%= "https://github.com/#{pull[:org]}/#{pull[:repo]}" %>">
+                  <%= "#{pull[:repo]}" %>
+                </a>
+              </td>
+              <td>
+                <a href="<%= pull[:user][:html_url] %>">
+                  <%= pull[:user][:login] %>
+                </a>
+              </td>
+              <td><%= pull[:updated_at].strftime('%d %B %Y') %></td>
+              <td><%= pull[:comments] %></td>
+              <td>
+              <% pull[:labels].each do |label| %>
+                <p style="color: #<%= label[:color] %>"><%= label[:name] %></p>
+              <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% end %>
+    <% else %>
+      <table class="u-full-width">
+        <thead>
+          <tr>
+            <th><span>Name</span></th>
+            <th><span>Repo</span></th>
+            <th><span>Author</span></th>
+            <th><span>Last Update</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td colspan="5">
+              <div class="center">
+                <p>Nothing to show for now...</p>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    <% end %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="twelve colunm center">
+    <footer>
+      <a href="/about">about this app</a>
+    </footer>
+  </div>
+</div>
