@@ -25,9 +25,9 @@ You can run it on your machine or sever by follwing this steps:
  - `git clone <this repo>`
  - `bundle install`
  - `git remote add heroku <<Your Heroku app URL>>`
- - `heroku config:set GITHUB_APP_ID=<<Add your GITHUB_APP_ID to Heroku app>>`
- - `heroku config:set GITHUB_APP_SECRET=<<Add your GITHUB_APP_SECRET to Heroku app>>`
- - `heroku config:set SESSION_SECRET=<<Add your SESSION_SECRET to Heroku app>>`
+ - `heroku config:set --app=puppethack-open-prs GITHUB_APP_ID=<<Add your GITHUB_APP_ID to Heroku app>>`
+ - `heroku config:set --app=puppethack-open-prs GITHUB_APP_SECRET=<<Add your GITHUB_APP_SECRET to Heroku app>>`
+ - `heroku config:set --app=puppethack-open-prs SESSION_SECRET=$(ruby -e "require 'securerandom'; puts SecureRandom.hex")`
  - `git push heroku master`
  - `heroku open`
 
